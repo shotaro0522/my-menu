@@ -1,0 +1,71 @@
+<%= form_with model: @recipe_form,  url: url, method: method, id: 'new_recipe', local: true do |f| %>
+
+<%= render 'shared/error_messages', model: f.object %>
+
+  <%# 画像 %>
+  <div class="img-upload">
+
+    <div class="weight-bold-text">
+    画像
+    <span class="indispensable">必須</span>
+    </div>
+    
+    <div class="click-upload">
+      <p>クリックしてファイルをアップロード</p>
+      <%= f.file_field :image, id:"item-image" %>
+    </div>
+
+  </div>
+  <%# /画像 %>
+
+  <%# レシピ名と作り方 %>
+  <div class="new-recipes">
+
+    <div class="weight-bold-text">
+    レシピ名
+    <span class="indispensable">必須</span>
+    </div>
+
+    <%= f.text_area :recipe_name, class:"items-text", id:"item-name", placeholder:"レシピ名", maxlength:"40" %>
+    
+    <div class="recipe-explain">
+    <div class="weight-bold-text">
+    作り方
+    <span class="indispensable">必須</span>
+    </div>
+
+    <%= f.text_area :info, class:"items-text", id:"item-info", placeholder:"作り方" ,rows:"7" ,maxlength:"1000" %>
+
+  </div>
+  <%# /レシピ名と作り方 %>
+
+
+  <%# ジャンルと参考情報 %>
+  <div class="recipe-detail">
+    <div class="form">
+      <div class="weight-bold-text">
+       ジャンル
+      <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {}) %>
+    </div>
+
+    <div class="weight-bold-text">
+    参考情報（URLなど）
+    <span class="indispensable">必須</span>
+    </div>
+
+    <%= f.text_area :url, class:"items-text", id:"item-name", placeholder:" 参考情報（URLなど）", maxlength:"40" %>
+    
+  </div>
+
+  <%# /ジャンルと参考情報 %>
+
+  <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "登録する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+  <%# /下部ボタン %>
+
+<% end %>
