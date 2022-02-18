@@ -10,3 +10,23 @@
 <% end %>
 
 <%= link_to 'レシピを投稿する', new_recipe_path %>
+
+<div class="subtitle" >
+新着レシピ
+</div>
+
+<% @recipes.each do |recipe|%>
+    <li class='list' style="list-style-type: none;">
+      <%# <%= link_to recipe_path(recipe.id) do %>
+
+      <div class='item-img-content'>
+        <%= image_tag recipe.image, class: "item-img" %>
+      </div>
+
+      <div class='item-info'>
+        <h3 class='item-name'>
+          <%= recipe.recipe_name %>
+        </h3>
+      </div>
+    </li>
+<% end %>
