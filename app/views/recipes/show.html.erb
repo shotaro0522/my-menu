@@ -1,0 +1,14 @@
+<%= @recipe.recipe_name %>
+<br>
+<%= image_tag @recipe.image ,class:"item-box-img" %>
+<br>
+<%= @recipe.genre.name %>
+<br>
+<%= @recipe.info %>
+<br>
+<%= @recipe.url %>
+<br>
+<%= link_to "レシピの編集", edit_recipe_path(@recipe.id), method: :get, class: "item-red-btn" %>
+<p class="or-text">or</p>
+削除
+<%# <%= link_to "削除", item_path(@item.id), method: :delete, class:"item-destroy" %>

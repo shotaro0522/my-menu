@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, except: :index
-  before_action :set_recipe, only: [:edit, :update]
+  before_action :set_recipe, only: [:edit, :update, :show]
 
   def index
     @recipes = Recipe.order(created_at: "DESC")
@@ -18,6 +18,9 @@ class RecipesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
   end
 
   def edit
