@@ -26,6 +26,7 @@ class RecipesController < ApplicationController
   def edit
     recipe_attributes = @recipe.attributes
     @recipe_form = RecipeForm.new(recipe_attributes)
+    # @recipe_form.ingredient_name = @recipe.ingredients&.first&.ingredient_name
   end
 
   def update
@@ -41,7 +42,7 @@ class RecipesController < ApplicationController
 
   private
   def recipe_form_params
-    params.require(:recipe_form).permit(:recipe_name, :genre_id, :info, :url, :image).merge(user_id: current_user.id)
+    params.require(:recipe_form).permit(:recipe_name, :genre_id, :info, :url, :ingredient_name, :image).merge(user_id: current_user.id)
   end
 
   def set_recipe
