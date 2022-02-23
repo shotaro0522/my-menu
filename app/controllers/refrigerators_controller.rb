@@ -1,18 +1,16 @@
-class PlansController < ApplicationController
+class RefrigeratorsController < ApplicationController
   def create
-    Plan.create(plan_params)
+    Refrigerator.create(stock_params)
     redirect_to  controller: :users, action: :show, id: current_user.id
   end
 
   def destroy
-    Plan.delete_all
+    Refrigerator.delete_all
     redirect_to  controller: :users, action: :show, id: current_user.id
   end
 
   private
-  def plan_params
-    params.require(:plan).permit(:week_id, :recipe_number)
+  def stock_params
+    params.require(:refrigerator).permit(:stock)
   end
-
-
 end

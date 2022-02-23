@@ -98,6 +98,18 @@
 
 <div>
 冷蔵庫
+<%= form_with model: @stock, url: refrigerators_path, class: 'form' do |f| %>
+  <%= f.label :在庫を入力, class: 'lavel' %>
+  <%= f.text_field :stock, class: 'text-input' %>
+
+  <%= f.submit '保存' %>
+<% end %>
+
+<%= @stocks %>
+
+<%= link_to '一括削除', refrigerator_path{@stock.id}, method: :delete %>
+
+
 </div>
 
 <div>

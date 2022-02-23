@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :recipes, only: [:index, :new, :create, :edit, :update, :show]
   resources :users, only: :show
   resources :plans, only: [:create, :destroy]
+  resources :refrigerators, only: [:create, :destroy]
 end

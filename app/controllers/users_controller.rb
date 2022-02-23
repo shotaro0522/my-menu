@@ -8,9 +8,11 @@ class UsersController < ApplicationController
     end
 
     get_week
+    get_stocks
     get_ingredients
 
     @plan = Plan.new
+    @stock = Refrigerator.new
 
   end
 
@@ -38,6 +40,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def get_stocks
+
+    @stocks = []
+
+    stocks = Refrigerator.all
+
+    stocks.each do |stock|
+      @stocks.push(stock.stock)
+    end
+    
+  end
+
   def get_ingredients
 
     @ingredients = []
@@ -49,10 +63,9 @@ class UsersController < ApplicationController
       ingredient = Ingredient.find_by(id: relation.ingredient_id)
       @ingredients.push(ingredient.ingredient_name)
     end
+
+    @ingredients = @ingredients - @stocks
     
   end
-
-
-
 
 end
