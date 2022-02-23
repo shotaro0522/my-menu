@@ -1,3 +1,10 @@
+<head>
+  <meta charset="UTF-8">
+  <title>マイページ</title>
+  <link rel="stylesheet" href="assets/stylesheets/reset.css">
+  <link rel="stylesheet" href="assets/stylesheets/users/show.css">
+</head>
+
 <div class='header'>
 
  <div class='up'>
@@ -46,7 +53,48 @@
 
 <div>
 今週の献立
+
+フォーム
+<div class='form'>
+<%= form_with model: @plan, url: plans_path, class: 'form' do |f| %>
+
+  <%= f.label :曜日を選択, class: 'lavel' %>
+  <%= f.collection_select(:week_id, Week.all, :id, :name, {}, {class:"week-select"}) %>
+
+  <%= f.label :レシピを選択, class: 'lavel' %>
+  <%= f.select :recipe_number, options_from_collection_for_select( Recipe.all, :id, :recipe_name) %>
+
+  <%= f.submit '保存' %>
+  
+<% end %>
 </div>
+
+スケジュール
+
+<div class='calendar'>
+  <% @week_days.each do |day| %>
+
+    <div class='item'>
+
+      <div class='date'>
+        <%= day[:wday] %>
+      </div>
+
+      <ul class='content'>
+      <% if day[:plans].length != 0 %>
+        <% day[:plans].each do |plan| %>
+          <li class='plan-list'>・<%= plan %></li>
+        <% end %>
+      <% end %>
+      </ul>
+      
+    </div>
+
+  <% end %>
+</div>
+
+ <%= link_to '一括削除', plan_path{@plan.id}, method: :delete %>
+
 
 <div>
 冷蔵庫
@@ -54,6 +102,7 @@
 
 <div>
 買い物リスト
+<%= @ingredients %>
 </div>
 
 <div class='footer'>
