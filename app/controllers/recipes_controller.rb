@@ -21,6 +21,11 @@ class RecipesController < ApplicationController
   end
 
   def show
+    if RecipeIngredientRelation.exists?(recipe_id: @recipe.id)
+      relation = RecipeIngredientRelation.find_by(recipe_id: @recipe.id)
+      ingredient1 = Ingredient.find_by(id: relation.ingredient_id)
+      @ingredient1 = ingredient1.ingredient_name
+    end
   end
 
   def edit

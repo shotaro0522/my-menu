@@ -1,0 +1,44 @@
+.header{
+  background:rgb(255, 226, 173);
+}
+
+.down{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lists-light {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+}
+
+
+
+
+
+
+.pic{
+  background-image: url(assets/images/food.png);
+}
+
+
+.intro{
+  background:rgb(230, 103, 000);
+
+}
+
+.newrecipe{
+  background:rgb(255, 226, 173);
+
+}
+
+.search{
+  background:rgb(255, 226, 173);
+
+}
+
+.footer{
+  background:rgb(255, 226, 173);
+
+}
