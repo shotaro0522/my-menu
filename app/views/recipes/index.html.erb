@@ -15,66 +15,106 @@
   <div class='down'>
     <ul class='lists-light'>
       <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, "/users/#{current_user.id}" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+        <li class='message'><%= link_to current_user.nickname, "/users/#{current_user.id}" %></li>
+        <li class='message'><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
       <% else %>
-        <li><%= link_to '新規登録', new_user_registration_path %></li>
-        <li><%= link_to 'ログイン', new_user_session_path %></li>
+        <li class='message'><%= link_to '新規登録', new_user_registration_path %></li>
+        <li class='message'><%= link_to 'ログイン', new_user_session_path %></li>
       <% end %>
     </ul>
   </div>
 
 </div>
 
-
-
-<div class='pic'>
-写真
-</div>
-
 <div class='intro'>
- <h2>My menuで、自炊をもっと楽しく、もっと手軽に<h2>
+ <h2 class='title'>My menuで、自炊をもっと楽しく、もっと手軽に<h2>
   <ul class = 'text' >
+
+   <div class='one'>
+   <img src="https://image-my-menu.s3.ap-northeast-1.amazonaws.com/recipe.png" alt="ここに画像が入る">
    <li>①レシピ登録</li>
+   </div>
+   <div class='two'>
+   <img src="views/recipes/recipe.png" alt="ここに画像が入る">
    <li>②スケジュールを作成</li>
+   </div>
+   <div class='three'>
+   <img src="views/recipes/recipe.png" alt="ここに画像が入る">
    <li>③買い物リストを自動生成</li>
+   </div>
+
   </ul>
 </div>
 
 <div class='newrecipe'>
 
   <div class="subtitle" >
-  新着レシピ
+  <h2 class='title'>新着レシピ</h2>
   </div>
 
-  <% @recipes.each do |recipe|%>
-      <li class='list' style="list-style-type: none;">
-        <%= link_to recipe_path(recipe.id) do %>
+  <div class="display" >
+    <% @recipes.each do |recipe|%>
+        <li class='list' style="list-style-type: none;">
+          <%= link_to recipe_path(recipe.id) do %>
 
-          <div class='item-img-content'>
-            <%= image_tag recipe.image, class: "item-img" %>
-          </div>
+            <div class='item-img-content'>
+              <%= image_tag recipe.image, class: "item-img" %>
+            </div>
 
-          <div class='item-info'>
-            <h3 class='item-name'>
-              <%= recipe.recipe_name %>
-            </h3>
-          </div>
+            <div class='item-info'>
+              <h3 class='item-name'>
+                <%= recipe.recipe_name %>
+              </h3>
+            </div>
 
-        <% end %>
-      </li>
-  <% end %>
+          <% end %>
+        </li>
+    <% end %>
+  </div>
 
+  <div class="btn btn--orange btn--radius">
   <%= link_to 'レシピを投稿する', new_recipe_path %>
+  </div>
 
 </div>
 
+
+
+
 <div class='search'>
-検索
+<h2 class='title'>検索</h2>
+
+<div class='search2'>
+   <div class='search3'>
+   料理名
+  <input type="text" placeholder="料理名を入力" class="name-form">
+  <input type="submit" value="検索" class="send">
+   </div>
+
+   <div class='search3'>
+   材料
+   <input type="text" placeholder="材料を入力" class="name-form">
+  <input type="submit" value="検索" class="send">
+  
+   </div>
+
+   <div class='search3'>
+  ジャンル
+  <input type="text" placeholder="ジャンルを入力" class="name-form">
+  <input type="submit" value="検索" class="send">
+
+   </div>
+
+  </ul>
+  </div>
+</div>
+
+
 </div>
 
 <div class='footer'>
-フッター
+MyMenu
+
 </div>
 
 

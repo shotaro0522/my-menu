@@ -1,7 +1,134 @@
 
+
+
+.message{
+  padding: 0px 20px 0px 0px;
+}
+
+.display{
+  display: flex;
+  justify-content: center;
+}
+
+.list{
+  padding: 20px 20px 20px 20px;
+  
+
+}
+
+.item-img {
+  width: 25vh;
+  height: 25vh;
+}
+
+
+.myrecipe{
+  background:rgb(253, 173, 61);
+  width: 100vw;
+  height: 55vh;
+  border:17px solid rgb(255, 226, 173);
+
+  
+}
+
+.favorite{
+  background:rgb(253, 173, 61);
+  width: 100vw;
+  height: 55vh;
+  border:17px solid rgb(255, 226, 173);
+}
+
+.thisweek{
+  width: 100vw;
+  height: 60vh;
+  background:rgb(135, 203, 208);
+  border:17px solid rgb(255, 226, 173);
+}
+
+.button2{
+  background-color: white;
+  position: absolute;
+  right: 115px;
+  top: 1370px;
+  border: 1px solid black;
+}
+
+.button3{
+  background-color: white;
+  position: absolute;
+  right: 115px;
+  top: 1800px;
+  border: 1px solid black;
+}
+
+
+.stock{
+  background:rgb(254, 254, 254);
+  width: 100vw;
+  height: 60vh;
+  border:17px solid rgb(255, 226, 173);
+
+}
+
+.form2{
+  display: inline-block;
+
+
+}
+
+.aaa{
+  padding-left: 100px;
+  padding-top: 20px;
+}
+
+
+.list2{
+  width: 40vw;
+  height: 20vh;
+  
+  
+}
+
+.listli{
+  padding-bottom:1px;
+  margin: 0,0,0,20px;
+}
+
+.shopping{
+  background:rgb(253, 173, 61);
+  width: 100vw;
+  height: 60vh;
+  border:17px solid rgb(255, 226, 173);
+}
+
+.big{
+  display: flex;
+}
+
+.photo{
+  
+  width: 40vw;
+  height: 40vh;
+}
+
+
+
+
+
+
+
+
+
+.footer{
+  background:rgb(255, 226, 173);
+  width: 100vw;
+  height: 10vh;
+}
+
+/* カレンダー */
 .calendar {
   width: 100vw;
-  margin-top: 15vh;
+  margin-top: 2vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,13 +165,14 @@
 
 .form {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  margin-top: 15vh;
+
 }
 
 .lavel {
-  font-size: 3vh;
+  font-size: 2vh;
+  padding: 6px,0,0,0;
   color: rgb(255, 255, 255);
 }
 
@@ -59,3 +187,15 @@
   width: 13vw;
   margin: 0 2vw;
 }
+
+.footer{
+  background:rgb(255, 226, 173);
+  width: 100vw;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+

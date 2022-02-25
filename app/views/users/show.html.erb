@@ -5,6 +5,8 @@
   <link rel="stylesheet" href="assets/stylesheets/users/show.css">
 </head>
 
+<body>
+
 <div class='header'>
 
  <div class='up'>
@@ -14,11 +16,11 @@
   <div class='down'>
     <ul class='lists-light'>
       <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, "/users/#{current_user.id}" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+        <li class='message'><%= link_to current_user.nickname, "/users/#{current_user.id}" %></li>
+        <li class='message'><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
       <% else %>
-        <li><%= link_to '新規登録', new_user_registration_path %></li>
-        <li><%= link_to 'ログイン', new_user_session_path %></li>
+        <li class='message'><%= link_to '新規登録', new_user_registration_path %></li>
+        <li class='message'><%= link_to 'ログイン', new_user_session_path %></li>
       <% end %>
     </ul>
   </div>
@@ -26,8 +28,10 @@
 </div>
 
 
-<div>
-マイレシピ
+<div class='myrecipe'>
+<h2 class='title'>マイレシピ</h2>
+
+<div class= 'display'>
   <% @recipes.each do |recipe|%>
       <li class='list' style="list-style-type: none;">
         <%= link_to recipe_path(recipe.id) do %>
@@ -47,21 +51,21 @@
   <% end %>
 </div>
 
-<div>
-お気に入りレシピ
 </div>
 
-<div>
-今週の献立
+<div class='favorite'>
+<h2 class='title'>お気に入りレシピ</h2>
+</div>
 
-フォーム
+<div class='thisweek'>
+<h2 class='title'>今週の献立</h2>
 <div class='form'>
 <%= form_with model: @plan, url: plans_path, class: 'form' do |f| %>
 
-  <%= f.label :曜日を選択, class: 'lavel' %>
+  <%= f.label :曜日, class: 'lavel' %>
   <%= f.collection_select(:week_id, Week.all, :id, :name, {}, {class:"week-select"}) %>
 
-  <%= f.label :レシピを選択, class: 'lavel' %>
+  <%= f.label :レシピ, class: 'lavel' %>
   <%= f.select :recipe_number, options_from_collection_for_select( Recipe.all, :id, :recipe_name) %>
 
   <%= f.submit '保存' %>
@@ -69,7 +73,7 @@
 <% end %>
 </div>
 
-スケジュール
+
 
 <div class='calendar'>
   <% @week_days.each do |day| %>
@@ -93,30 +97,75 @@
   <% end %>
 </div>
 
- <%= link_to '一括削除', plan_path{@plan.id}, method: :delete %>
+ <%= link_to '一括削除', plan_path{@plan.id}, method: :delete, class:'button2'%>
+ </div>
 
 
-<div>
-冷蔵庫
-<%= form_with model: @stock, url: refrigerators_path, class: 'form' do |f| %>
-  <%= f.label :在庫を入力, class: 'lavel' %>
-  <%= f.text_field :stock, class: 'text-input' %>
-
-  <%= f.submit '保存' %>
-<% end %>
-
-<%= @stocks %>
-
-<%= link_to '一括削除', refrigerator_path{@stock.id}, method: :delete %>
 
 
-</div>
 
-<div>
-買い物リスト
-<%= @ingredients %>
-</div>
+  <div class='stock'>
+    <h2 class='title'>冷蔵庫</h2>
+
+    <div class='big'>
+
+      <div class='photo'>
+      写真を入れる
+      </div>
+
+      <div class='small'>
+        <%= form_with model: @stock, url: refrigerators_path, class: 'form2' do |f| %>
+          <%= f.label :在庫を入力, class: 'lavel' %>
+          <%= f.text_field :stock, class: 'text-input' %>
+
+          <%= f.submit '保存' %>
+        <% end %>
+
+        <div class='list2'>
+        <ul class='aaa'>
+          <% @stocks.each do |item|%>
+            <li class='listli' style="list-style-type: disc;">
+            <%= item %>
+            </li>
+          <% end %>
+        </ul>
+        </div>
+
+        <br>
+        <%= link_to '一括削除', refrigerator_path{@stock.id}, method: :delete, class:'button3'%>
+      </div>
+
+  </div>
+
+  <div class='shopping'>
+    <h2 class='title'>買い物リスト</h2>
+
+      <div class='big'>
+
+        <div class='photo'>
+        写真を入れる
+        </div>
+
+        <div class='small'>
+          <div class='list2'>
+          <ul class='aaa'>
+            <% @ingredients.each do |item|%>
+              <li class='listli' style="list-style-type: disc;">
+              <%= item %>
+              </li>
+            <% end %>
+          </ul>
+          </div>
+        </div>
+
+      </div>
+
+  </div>
+
+
 
 <div class='footer'>
-フッター
+MyMenu
 </div>
+
+</body>

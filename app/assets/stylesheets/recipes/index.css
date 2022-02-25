@@ -1,5 +1,15 @@
+body{
+  background:rgb(255, 226, 173);
+
+
+}
+
+
 .header{
   background:rgb(255, 226, 173);
+  width: 100vw;
+  height: 12vh;
+  
 }
 
 .down{
@@ -11,34 +21,154 @@
   display: flex;
   list-style: none;
   align-items: flex-end;
+  align-items: flex-end;
+}
+
+.message{
+  padding: 0px 20px 0px 0px;
+}
+
+
+.title{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+
+
 }
 
 
 
 
-
-
-.pic{
-  background-image: url(assets/images/food.png);
-}
 
 
 .intro{
-  background:rgb(230, 103, 000);
+  background:rgb(253, 173, 61);
+  width: 100vw;
+  height: 50vh;
+  border-right: 12px solid rgb(255, 226, 173);
+  border-left: 12px solid rgb(255, 226, 173);
+  color: white;
+}
 
+.text{
+  display: flex;
+  justify-content: space-around;
 }
 
 .newrecipe{
   background:rgb(255, 226, 173);
+  width: 100vw;
+  height: 70vh;
 
+}
+
+.display{
+  display: flex;
+  justify-content: center;
+}
+
+.list{
+  padding: 20px 20px 20px 20px;
+}
+
+.item-img {
+  width: 25vh;
+  height: 25vh;
 }
 
 .search{
+  background:rgb(253, 173, 61);
   background:rgb(255, 226, 173);
+  background:rgb(246, 173, 060);
+  width: 100vw;
+  height: 40vh;
+  border-right: 12px solid rgb(255, 226, 173);
+  border-left: 12px solid rgb(255, 226, 173);
 
 }
+
+.search2{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content:center;
+
+}
+
+.search3{
+  padding: 20px 0px;
+  font-size: 18px;
+
+
+}
+
+
 
 .footer{
   background:rgb(255, 226, 173);
+  width: 100vw;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 
 }
+
+
+
+
+
+
+
+/* ボタン関連 */
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+.btn--orange,
+a.btn--orange {
+  color: #fff;
+  background-color: rgb(230, 104, 000);
+}
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background: rgb(230, 104, 000);
+}
+
+a.btn--radius {
+   border-radius: 100vh;
+}
+
+.btn{
+  position: absolute;
+  right: 510px;
+  top: 100;
+}
+
+
+
+
