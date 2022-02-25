@@ -96,9 +96,11 @@
 
 .shopping{
   background:rgb(253, 173, 61);
-  width: 100vw;
+  width: 97.7vw;
   height: 60vh;
-  border:17px solid rgb(255, 226, 173);
+  
+  border-left: 0px solid rgb(255, 226, 173);
+  border-top: 34px solid rgb(255, 226, 173);
 }
 
 .big{
