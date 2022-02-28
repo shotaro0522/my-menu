@@ -33,6 +33,7 @@ body{
   display: flex;
   justify-content: center;
   padding: 20px;
+  font-weight:  900;
 
 
 }
@@ -49,11 +50,25 @@ body{
   border-right: 12px solid rgb(255, 226, 173);
   border-left: 12px solid rgb(255, 226, 173);
   color: white;
+
+
+}
+
+.photo1{
+  width: 200px;
+  height: 200px;
+  margin: 10px 0px 0px 0px;
+}
+
+.photo3{
+  margin: 10px 0px 0px 50px;
+
 }
 
 .text{
   display: flex;
   justify-content: space-around;
+  margin: 10px 0px 0px 0px;
 }
 
 .newrecipe{

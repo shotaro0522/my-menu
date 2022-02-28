@@ -28,6 +28,7 @@
   height: 55vh;
   border:17px solid rgb(255, 226, 173);
 
+
   
 }
 
@@ -36,6 +37,7 @@
   width: 100vw;
   height: 55vh;
   border:17px solid rgb(255, 226, 173);
+
 }
 
 .thisweek{
@@ -43,6 +45,7 @@
   height: 60vh;
   background:rgb(135, 203, 208);
   border:17px solid rgb(255, 226, 173);
+
 }
 
 .button2{
@@ -67,6 +70,7 @@
   width: 100vw;
   height: 60vh;
   border:17px solid rgb(255, 226, 173);
+
 
 }
 
@@ -101,6 +105,7 @@
   
   border-left: 0px solid rgb(255, 226, 173);
   border-top: 34px solid rgb(255, 226, 173);
+
 }
 
 .big{
@@ -111,8 +116,15 @@
   
   width: 40vw;
   height: 40vh;
+  display: flex;
+  justify-content: center;
 }
 
+.photo2{
+  width: 300px;
+  height: 300px;
+
+}
 
 
 
